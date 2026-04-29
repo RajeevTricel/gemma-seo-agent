@@ -200,3 +200,12 @@ Create an inference notebook/script that loads the Hugging Face adapter fresh an
   - Fix
   - Next action
 - Current status: full training → adapter push → fresh inference → RAG flow is working.
+
+## Terminal runner verification
+
+- Script: `agent/seo_agent.py`
+- Verified in Kaggle GPU environment.
+- Command tested:
+  `python agent/seo_agent.py "Can we generate 5,000 location pages with the same copy?"`
+- Result: successfully loaded the v4 Hugging Face adapter and generated a five-heading SEO response.
+- Status: CLI runner works for cloud GPU usage.
