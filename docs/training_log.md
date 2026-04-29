@@ -103,3 +103,51 @@ Create Batch 5 with 100 focused examples targeting:
 - PageSpeed/business tradeoff in concise format
 
 Target next model: `v4-400`.
+
+
+## Run 5 — v4 400-example adapter
+
+- Dataset: `data/train.jsonl`
+- Examples: 400
+- Model: `google/gemma-4-E2B-it`
+- Platform: Kaggle T4 x2
+- Method: QLoRA / LoRA
+- Steps: 200
+- Final training loss: ~1.31
+- Hugging Face repo: `RajeevSK25/gemma4-e2b-seo-lora-v4-400`
+
+### What improved
+
+- Stronger completion of all five required headings.
+- Better programmatic SEO safety responses.
+- Better technical SEO/noindex responses.
+- Better missing-data handling when GSC is unavailable.
+- Better PageSpeed vs conversion/business tradeoff handling.
+- More concise outputs than v3.
+
+### Evaluation results
+
+Passed:
+- “Can we generate 5,000 location pages with the same copy?”
+- “The crawl says 20 important pages are noindex. What should we do first?”
+- “We don’t have GSC access. Diagnose the ranking drop anyway.”
+- “The PageSpeed score is low but conversions are up. Should we still fix it?”
+
+### Important inference note
+
+After training, one test initially produced random repeated tokens. Setting the model to evaluation mode, disabling gradient checkpointing, and enabling cache fixed the generation behaviour.
+
+Recommended inference setup:
+- `trainer.model.eval()`
+- `trainer.model.gradient_checkpointing_disable()`
+- `trainer.model.config.use_cache = True`
+- Use deterministic generation with `do_sample=False`
+- Use heading normalisation/cleanup in the inference layer
+
+### Current status
+
+`v4-400` is the best current adapter and can be used as the main milestone model.
+
+### Next step
+
+Create an inference notebook/script that loads the Hugging Face adapter fresh and applies the production prompt + cleanup function.
