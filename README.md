@@ -57,3 +57,16 @@ The next phase is to build an agent layer around the model:
 - add tool-calling schemas
 - add evaluation prompts
 - eventually connect APIs such as PageSpeed, GSC, GA4, and crawl data
+
+## Terminal usage
+
+Run from a GPU environment after Hugging Face login:
+
+```bash
+python agent/seo_agent.py "Can we generate 5,000 location pages with the same copy?"
+
+
+python agent/seo_agent.py "Your SEO question here"
+python agent/seo_agent.py "Your SEO question here" --show-sources
+python agent/seo_agent.py "Your SEO question here" --no-rag
+python agent/run_eval.py
