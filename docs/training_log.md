@@ -184,3 +184,19 @@ Create an inference notebook/script that loads the Hugging Face adapter fresh an
   - location/programmatic prompts prefer `programmatic_seo_safety.md`
   - PageSpeed prompts prefer `pagespeed_priority_guide.md`
   - GSC/GA4 prompts prefer `gsc_ga4_diagnosis.md`
+
+## Fresh inference verification — v4 + RAG
+
+- Verified that `google/gemma-4-E2B-it` can be loaded fresh with adapter `RajeevSK25/gemma4-e2b-seo-lora-v4-400`.
+- Verified that RAG context from `agent/rag_retriever.py` is injected before generation.
+- Tested:
+  - programmatic SEO/location-page safety
+  - noindex technical SEO
+  - PageSpeed vs conversion tradeoff
+- All tests passed the required heading format:
+  - Diagnosis
+  - Evidence
+  - Priority
+  - Fix
+  - Next action
+- Current status: full training → adapter push → fresh inference → RAG flow is working.
