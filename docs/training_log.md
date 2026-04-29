@@ -209,3 +209,23 @@ Create an inference notebook/script that loads the Hugging Face adapter fresh an
   `python agent/seo_agent.py "Can we generate 5,000 location pages with the same copy?"`
 - Result: successfully loaded the v4 Hugging Face adapter and generated a five-heading SEO response.
 - Status: CLI runner works for cloud GPU usage.
+
+## CLI eval runner verification
+
+- Script: `agent/run_eval.py`
+- Eval file: `data/eval_prompts.jsonl`
+- Ran in Kaggle GPU environment using fresh Hugging Face adapter load.
+- Result:
+  - Passed: 5
+  - Failed: 0
+  - Total: 5
+- The runner successfully checks whether generated answers include:
+  - Diagnosis
+  - Evidence
+  - Priority
+  - Fix
+  - Next action
+- Current limitation:
+  - The eval runner checks format only, not answer quality.
+- Next improvement:
+  - Add quality checks for concise wording, no hallucinated claims, and no malformed phrases.
