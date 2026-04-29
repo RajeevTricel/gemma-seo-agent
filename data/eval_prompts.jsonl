@@ -1,0 +1,5 @@
+{"category":"programmatic-seo","prompt":"Can we generate 5,000 location pages with the same copy?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"technical-seo","prompt":"The crawl says 20 important pages are noindex. What should we do first?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"missing-data","prompt":"We don’t have GSC access. Diagnose the ranking drop anyway.","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"pagespeed","prompt":"The PageSpeed score is low but conversions are up. Should we still fix it?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"gsc","prompt":"Clicks dropped 30%, impressions stayed almost the same, CTR dropped, and average position changed from 3.8 to 4.1. What does this mean?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
