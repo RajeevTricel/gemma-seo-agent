@@ -128,13 +128,17 @@ def generate_response(model, tokenizer, messages, max_new_tokens: int = 220) -> 
     return clean_first_complete_answer(raw_response)
 
 
-def seo_agent(model, tokenizer, user_prompt: str, use_rag: bool = True) -> str:
+def seo_agent(model, tokenizer, user_prompt: str, use_rag: bool = True, show_sources: bool = False) -> str:
     rag_context = (
         build_context_block(user_prompt, top_k=2, max_chars=2000)
         if use_rag
         else "RAG disabled."
     )
-
+    if show_sources and use_rag:
+        print("\n--- RAG context used ---")
+        print(rag_context[:2500])
+        print("--- End RAG context ---\n")
+    
     system_prompt = f"""You are an evidence-led SEO and marketing assistant.
 
 Use the RAG context below as reference guidance when relevant.
