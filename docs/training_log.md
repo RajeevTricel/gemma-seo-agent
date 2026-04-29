@@ -151,3 +151,19 @@ Recommended inference setup:
 ### Next step
 
 Create an inference notebook/script that loads the Hugging Face adapter fresh and applies the production prompt + cleanup function.
+
+## Inference notebook — v4 adapter
+
+- Notebook: `notebooks/03_inference_gemma_seo_lora.ipynb`
+- Adapter: `RajeevSK25/gemma4-e2b-seo-lora-v4-400`
+- Purpose: Load base Gemma E2B + v4 LoRA adapter without retraining.
+- Result: Production wrapper successfully controls output format.
+- Important inference controls:
+  - deterministic generation with `do_sample=False`
+  - short-section prompt
+  - heading normalisation
+  - retry if required headings are missing
+  - cleanup for repeated assistant/system continuations
+- Passed previous failure prompts:
+  - noindex technical SEO prompt
+  - missing GSC access prompt
