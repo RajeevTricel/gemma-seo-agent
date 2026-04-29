@@ -208,11 +208,12 @@ def main():
     parser = argparse.ArgumentParser(description="Run the Gemma SEO LoRA agent from terminal.")
     parser.add_argument("prompt", type=str, help="SEO/marketing question to answer.")
     parser.add_argument("--no-rag", action="store_true", help="Disable RAG context retrieval.")
+    parser.add_argument("--show-sources", action="store_true", help="Print retrieved RAG context before the answer.")
 
     args = parser.parse_args()
 
     model, tokenizer = load_model()
-    response = seo_agent(model, tokenizer, args.prompt, use_rag=not args.no_rag)
+    response = seo_agent(model, tokenizer, args.prompt, use_rag=not args.no_rag, show_sources=args.show_sources)
 
     print(response)
 
