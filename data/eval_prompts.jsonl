@@ -1,5 +1,25 @@
 {"category":"programmatic-seo","prompt":"Can we generate 5,000 location pages with the same copy?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"programmatic-seo","prompt":"We want to create AI-written service pages for every town in Ireland. Is that safe?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"programmatic-seo","prompt":"Can we duplicate our best landing page and only swap the city name?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"programmatic-seo","prompt":"We have 800 generated pages but most have no traffic. Should we index all of them?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"programmatic-seo","prompt":"What quality checks should we use before scaling programmatic SEO pages?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
 {"category":"technical-seo","prompt":"The crawl says 20 important pages are noindex. What should we do first?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
-{"category":"missing-data","prompt":"We don’t have GSC access. Diagnose the ranking drop anyway.","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"technical-seo","prompt":"Our robots.txt blocks /products/. Is that a serious SEO issue?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"technical-seo","prompt":"The sitemap includes redirected URLs, noindex URLs, and non-canonical URLs. Is that bad?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"technical-seo","prompt":"Several product category pages canonical to the homepage. What should we check?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"technical-seo","prompt":"The crawl found 300 broken internal links, including links to service pages. What matters first?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"gsc-ga4","prompt":"Clicks dropped 30%, impressions stayed almost the same, CTR dropped, and average position changed from 3.8 to 4.1. What does this mean?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"gsc-ga4","prompt":"Impressions are stable but clicks dropped. Average position did not change much. What should we investigate?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"gsc-ga4","prompt":"Organic sessions increased but leads dropped. What does that usually suggest?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"gsc-ga4","prompt":"We don’t have GSC access. Diagnose the ranking drop anyway.","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"gsc-ga4","prompt":"Average position dropped from 4 to 9 for one service page, but impressions are only slightly down. What matters?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
 {"category":"pagespeed","prompt":"The PageSpeed score is low but conversions are up. Should we still fix it?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
-{"category":"gsc","prompt":"Clicks dropped 30%, impressions stayed almost the same, CTR dropped, and average position changed from 3.8 to 4.1. What does this mean?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"pagespeed","prompt":"Mobile LCP is poor on our main product category page. How urgent is this?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"pagespeed","prompt":"The hero image is 4MB and LCP is 6 seconds. What should we fix first?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"pagespeed","prompt":"A new lead form made the page slower but form submissions increased. Should we remove it?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"pagespeed","prompt":"Core Web Vitals are poor only on low-traffic blog posts. Should this be a top priority?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"cro-content","prompt":"This service page ranks well but does not convert. What should we change?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"cro-content","prompt":"Our landing page gets traffic but very few form submissions. What should we check first?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"cro-content","prompt":"Competitor pages have case studies, comparison tables, and FAQs. Our page only has intro text and a form.","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"cro-content","prompt":"Can we rewrite a ranking page completely to make it more sales-focused?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
+{"category":"cro-content","prompt":"The content is outdated but still ranks. How do we refresh it safely?","expected_headings":["Diagnosis:","Evidence:","Priority:","Fix:","Next action:"]}
