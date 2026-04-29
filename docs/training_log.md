@@ -167,3 +167,20 @@ Create an inference notebook/script that loads the Hugging Face adapter fresh an
 - Passed previous failure prompts:
   - noindex technical SEO prompt
   - missing GSC access prompt
+
+## RAG inference update
+
+- Connected `agent/rag_retriever.py` to the v4 inference notebook.
+- The assistant now retrieves relevant markdown guidance before generating.
+- Initial tests passed heading checks for:
+  - programmatic SEO/location-page safety
+  - noindex technical SEO
+  - PageSpeed vs conversion tradeoff
+  - GSC/CTR interpretation
+- Known issue:
+  - simple keyword retrieval can sometimes inject slightly broad or imperfect context.
+- Next retrieval improvement:
+  - add keyword routing so noindex/canonical/robots prompts prefer `technical_seo_runbook.md`
+  - location/programmatic prompts prefer `programmatic_seo_safety.md`
+  - PageSpeed prompts prefer `pagespeed_priority_guide.md`
+  - GSC/GA4 prompts prefer `gsc_ga4_diagnosis.md`
