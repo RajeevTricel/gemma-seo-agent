@@ -245,3 +245,20 @@ Create an inference notebook/script that loads the Hugging Face adapter fresh an
   - Failed: 0
   - Total: 25
 - Status: v4 RAG CLI agent passes current format and basic quality eval.
+
+
+## FastAPI wrapper verification
+
+- API file: `agent/api.py`
+- Tested in Kaggle using `fastapi.testclient.TestClient`.
+- `/health` returned:
+  - `status: ok`
+  - `model_loaded: true`
+  - adapter: `RajeevSK25/gemma4-e2b-seo-lora-v4-400`
+- `/answer` successfully returned:
+  - five-heading SEO response
+  - retrieved RAG source metadata
+- Confirmed source routing returned:
+  - `rag/seo/programmatic_seo_safety.md`
+  - `rag/marketing/cro_content_refresh.md`
+- Note: Kaggle does not support background `uvicorn &`, so API testing was done with `TestClient`.
