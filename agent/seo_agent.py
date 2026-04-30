@@ -32,9 +32,26 @@ def normalize_headings(text: str) -> str:
 
     return text
 
+def clean_malformed_phrases(text: str) -> str:
+    replacements = {
+        "Positionand": "position and",
+        "AvgPositionchange": "average position change",
+        "innoindexed": "noindexed",
+        "url count": "URL count",
+        "urls": "URLs",
+        "gsc": "GSC",
+        "ga4": "GA4",
+    }
+
+    for bad, good in replacements.items():
+        text = text.replace(bad, good)
+
+    return text
+
 
 def clean_first_complete_answer(text: str) -> str:
     text = normalize_headings(text)
+    text = clean_malformed_phrases(text)
 
     stop_markers = [
         "\nsystem\n",
@@ -56,7 +73,7 @@ def clean_first_complete_answer(text: str) -> str:
     if second_diag != -1:
         text = text[:second_diag].strip()
 
-    return normalize_headings(text)
+    return clean_malformed_phrases(normalize_headings(text))
 
 
 def has_all_headings(response: str) -> bool:

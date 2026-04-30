@@ -5,6 +5,19 @@ from agent.seo_agent import load_model, seo_agent, has_all_headings
 EVAL_PATH = "data/eval_prompts.jsonl"
 
 
+def clean_malformed_phrases(text: str) -> str:
+    replacements = {
+        "Positionand": "position and",
+        "AvgPositionchange": "average position change",
+        "innoindexed": "noindexed",
+    }
+
+    for bad, good in replacements.items():
+        text = text.replace(bad, good)
+
+    return text
+
+
 def load_eval_prompts(path=EVAL_PATH):
     prompts = []
 
@@ -53,6 +66,22 @@ def has_bad_phrases(response: str) -> bool:
 
     return any(pattern.lower() in response_lower for pattern in bad_patterns)
 
+def clean_malformed_phrases(text: str) -> str:
+    replacements = {
+        "Positionand": "position and",
+        "AvgPositionchange": "average position change",
+        "innoindexed": "noindexed",
+        "url count": "URL count",
+        "urls": "URLs",
+        "gsc": "GSC",
+        "ga4": "GA4",
+    }
+
+    for bad, good in replacements.items():
+        text = text.replace(bad, good)
+
+    return text
+
 
 def quality_check(response: str) -> tuple[bool, list[str]]:
     issues = []
@@ -89,6 +118,7 @@ def main():
         print("-" * 80)
 
         response = seo_agent(model, tokenizer, prompt, use_rag=True)
+        response = clean_malformed_phrases(response)
 
         print(response)
 
