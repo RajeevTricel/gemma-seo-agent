@@ -229,3 +229,19 @@ Create an inference notebook/script that loads the Hugging Face adapter fresh an
   - The eval runner checks format only, not answer quality.
 - Next improvement:
   - Add quality checks for concise wording, no hallucinated claims, and no malformed phrases.
+
+## Eval quality check verification
+
+- Expanded eval set: 25 prompts.
+- Added basic quality checks for:
+  - required headings
+  - section length
+  - malformed phrases
+  - unsafe/overconfident phrases
+- Initial run caught malformed output in the GSC eval case.
+- Added cleanup for malformed phrases such as `Positionand`, `AvgPositionchange`, and `innoindexed`.
+- Final result:
+  - Passed: 25
+  - Failed: 0
+  - Total: 25
+- Status: v4 RAG CLI agent passes current format and basic quality eval.
