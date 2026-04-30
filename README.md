@@ -70,3 +70,25 @@ python agent/seo_agent.py "Your SEO question here"
 python agent/seo_agent.py "Your SEO question here" --show-sources
 python agent/seo_agent.py "Your SEO question here" --no-rag
 python agent/run_eval.py
+
+### API testing in Kaggle
+
+Kaggle notebooks may not support running `uvicorn` as a background process. Use FastAPI `TestClient` instead:
+
+```python
+from fastapi.testclient import TestClient
+from agent.api import app
+
+with TestClient(app) as client:
+    print(client.get("/health").json())
+
+    res = client.post(
+        "/answer",
+        json={
+            "prompt": "Can we generate 5,000 location pages with the same copy?",
+            "use_rag": True,
+            "show_sources": True
+        }
+    )
+
+    print(res.json())
